@@ -1,6 +1,7 @@
 import * as React from "react"
 import { HeadFC, PageProps, graphql } from "gatsby"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { Button } from "../stories/Button"
 
 export const content = graphql`
     query {
@@ -34,7 +35,7 @@ const ContentfulPage: React.FC<PageProps> = ({ data }) => {
         <main>
             {data.allContentfulTestTypeaaaa.nodes.map(node => (
                 <>
-                    <h1>{node.title}</h1>
+                    <Button primary={true} label={node.title}/>
                     <div>{renderRichText(node.contentsRich)}</div>
                     <div>{node.contentsRich.raw}</div>
                 </>
