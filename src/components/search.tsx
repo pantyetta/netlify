@@ -20,7 +20,7 @@ const SearchResult = () =>{
         query {
             allContentfulTestTypeaaaa {
                 nodes {
-                    id
+                    contentful_id
                     title
                     contentsRich {
                         raw
@@ -81,7 +81,7 @@ const SearchResult = () =>{
 					{filteredData && filteredData.map((post) => {
 						return (
 							<li key={post.title}>
-								<a href={`/#`}>
+								<a href={`/testType/${post.contentful_id}`}>
 									<div className="result-inner__title">
 										{post.title}
 									</div>
